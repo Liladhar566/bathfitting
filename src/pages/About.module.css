@@ -1,0 +1,127 @@
+.aboutPage {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 14, 12, 0.5);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.heroOverlay h1 {
+  color: var(--color-warm-white);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Story Section */
+.storySection {
+  background: var(--color-warm-white);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.storyText p {
+  margin-bottom: var(--space-md);
+  font-size: 1.05rem;
+}
+
+.storyStats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  background: var(--color-ink);
+  padding: var(--space-2xl);
+  color: var(--color-warm-white);
+}
+
+.statBox {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-stone-light);
+}
+
+/* Showroom Section */
+.showroomSection {
+  background: var(--color-off-white);
+}
+
+.showroomHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.showroomDesc {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.showroomImageWrapper {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.showroomImageWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .storyStats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 600px) {
+  .storyStats {
+    grid-template-columns: 1fr;
+  }
+}

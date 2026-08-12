@@ -1,0 +1,221 @@
+.productsPage {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+.pageHeader {
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHeader h1 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+
+.pageHeader p {
+  color: var(--color-stone-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  background: var(--color-warm-white);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--space-4xl);
+}
+
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-2xl));
+  align-self: start;
+}
+
+.filterTitle {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.categoryList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.categoryBtn {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--color-stone-dark);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.categoryBtn:hover {
+  color: var(--color-charcoal);
+  padding-left: 4px;
+}
+
+.categoryBtn.active {
+  color: var(--color-gold-dark);
+  font-weight: 500;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-2xl);
+}
+
+.productCard {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  background: var(--color-off-white);
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.productCard:hover .imageWrapper img {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  z-index: 2;
+}
+
+.productInfo {
+  padding: var(--space-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.productCat {
+  font-size: 0.75rem;
+  color: var(--color-stone);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
+}
+
+.productName {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+  color: var(--color-ink);
+}
+
+.productDesc {
+  font-size: 0.9rem;
+  color: var(--color-stone-dark);
+  margin-bottom: var(--space-xl);
+  flex-grow: 1;
+}
+
+.viewBtn {
+  align-self: flex-start;
+  color: var(--color-gold-dark);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.viewBtn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold-dark);
+  transition: width var(--transition-fast);
+}
+
+.productCard:hover .viewBtn::after {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .sidebar {
+    position: static;
+  }
+  
+  .categoryList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  
+  .categoryBtn {
+    width: auto;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-stone-light);
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .categoryBtn:hover {
+    padding-left: 1rem;
+    background: var(--color-off-white);
+  }
+  
+  .categoryBtn.active {
+    background: var(--color-ink);
+    color: var(--color-gold);
+    border-color: var(--color-ink);
+  }
+}

@@ -1,0 +1,230 @@
+.home {
+  width: 100%;
+}
+
+.heroSection {
+  position: relative;
+  height: 400vh; /* Scroll length for the animation */
+  background: #0f0e0c;
+}
+
+.heroSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  background: linear-gradient(to top, rgba(15,14,12,0.8) 0%, rgba(15,14,12,0) 30%, rgba(15,14,12,0) 70%, rgba(15,14,12,0.6) 100%);
+  pointer-events: none; /* Let clicks pass through to animation if needed, though buttons need pointer-events */
+}
+
+.heroContent .container {
+  pointer-events: auto;
+  max-width: 800px;
+  margin-left: 0;
+}
+
+.heroContent h1 {
+  color: var(--color-warm-white);
+  margin-bottom: var(--space-md);
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.heroContent p {
+  color: rgba(245, 240, 232, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xl);
+  max-width: 500px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* Craftsmanship */
+.craftsmanship {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.craftText p {
+  margin-bottom: var(--space-md);
+}
+
+.craftImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: var(--shadow-xl);
+}
+
+/* Categories */
+.categoriesSection {
+  background: var(--color-off-white);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.categoryCard {
+  display: block;
+  background: var(--color-warm-white);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.categoryImgWrapper {
+  position: relative;
+  padding-top: 75%; /* 4:3 aspect */
+  overflow: hidden;
+}
+
+.categoryImgWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.categoryCard:hover .categoryImgWrapper img {
+  transform: scale(1.05);
+}
+
+.categoryContent {
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryContent h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.categoryContent span {
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.centerBtn {
+  text-align: center;
+}
+
+/* Features */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3xl);
+}
+
+.feature {
+  text-align: center;
+}
+
+.featureIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-cream);
+  color: var(--color-gold);
+  border-radius: 50%;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* CTA */
+.ctaSection {
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+  padding: var(--space-5xl) 0;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.ctaContent p {
+  color: var(--color-stone-light);
+  margin-bottom: var(--space-2xl);
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .craftsmanship {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    background: linear-gradient(to top, rgba(15,14,12,0.9) 0%, rgba(15,14,12,0.4) 50%, rgba(15,14,12,0.8) 100%);
+    justify-content: flex-end;
+    padding-bottom: 15vh;
+    text-align: center;
+  }
+  
+  .heroContent .container {
+    margin: 0 auto;
+  }
+  
+  .heroCtas {
+    justify-content: center;
+  }
+
+  .craftsmanship {
+    grid-template-columns: 1fr;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}

@@ -1,0 +1,126 @@
+.experiencePage {
+  padding-top: var(--nav-height);
+  background: var(--color-warm-white);
+}
+
+.pageHeader {
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHeader h1 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+
+.pageHeader p {
+  color: var(--color-stone-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.showcaseItem {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4/3;
+}
+
+.showcaseItem.large {
+  grid-column: span 2;
+  aspect-ratio: 21/9;
+}
+
+.showcaseItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.showcaseItem:hover img {
+  transform: scale(1.05);
+}
+
+.showcaseContent {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,14,12,0.8) 0%, rgba(15,14,12,0) 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-xl);
+  color: var(--color-warm-white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.showcaseItem:hover .showcaseContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcaseContent h3 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.showcaseContent p {
+  color: var(--color-stone-light);
+  margin: 0;
+}
+
+.featureSection {
+  background: var(--color-off-white);
+  padding: var(--space-5xl) 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+.featureImage {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.featureImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .showcaseGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .showcaseItem.large {
+    grid-column: span 1;
+    aspect-ratio: 4/3;
+  }
+
+  .showcaseContent {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(15,14,12,0.9) 0%, rgba(15,14,12,0) 70%);
+  }
+  
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}

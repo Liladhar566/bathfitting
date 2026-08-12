@@ -1,0 +1,126 @@
+.contactPage {
+  padding-top: var(--nav-height);
+  background: var(--color-warm-white);
+  min-height: 100vh;
+}
+
+.pageHeader {
+  background: var(--color-ink);
+  color: var(--color-warm-white);
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  text-align: center;
+}
+
+.pageHeader h1 {
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+
+.pageHeader p {
+  color: var(--color-stone-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.infoBlock h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-md);
+  color: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-stone-light);
+  padding-bottom: var(--space-xs);
+}
+
+.address {
+  font-style: normal;
+  color: var(--color-stone-dark);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.contactLink {
+  display: block;
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  text-decoration: none;
+  margin-bottom: var(--space-sm);
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--color-gold-dark);
+}
+
+.linkAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-dark);
+}
+
+.waAction {
+  color: #25d366;
+  margin-top: var(--space-md);
+}
+
+.hoursList {
+  list-style: none;
+}
+
+.hoursList li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: var(--color-stone-dark);
+}
+
+.hoursList li:last-child {
+  border-bottom: none;
+}
+
+.mapCol {
+  background: var(--color-off-white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 500px;
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  
+  .mapCol {
+    min-height: 400px;
+    grid-row: 1;
+  }
+  
+  .infoCol {
+    grid-row: 2;
+  }
+}
