@@ -75,7 +75,8 @@ export default function Hero3DAnimation() {
     let displayW = containerW;
     let displayH = containerW / frameAspectRatio;
 
-    if (displayH > containerH) {
+    // Use cover logic instead of contain, so animation fills entire screen on mobile
+    if (displayH < containerH) {
       displayH = containerH;
       displayW = containerH * frameAspectRatio;
     }
